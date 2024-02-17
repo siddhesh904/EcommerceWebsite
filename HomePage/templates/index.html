@@ -1,0 +1,24 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Home Page
+{% endblock  %}
+
+{% block body %}
+<div class="d-grid gap-2 d-md-flex justify-content-md-end m-2">
+          
+    {% if request.user.is_authenticated  %}
+    <div class="btn-group" role="group">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjvIbykKm7M4mZuUGxdyY7IF0-B8VlNanpSg&usqp=CAU" class="rounded-circle btn dropdown-toggle rounded-circle " data-bs-toggle="dropdown"  height="80px" width="80px" alt="">
+          
+
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item btn btn-outline-success" href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+      </div>
+      
+    {% endif %}
+    
+    
+  </div>
+{% endblock  %}
